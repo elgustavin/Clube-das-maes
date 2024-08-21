@@ -1,0 +1,257 @@
+/* css para a barra lateral */
+.sidebar {
+    height: 100vh; 
+    width: 250px; /* largura da barra lateral */
+    position: fixed; /* fixa na tela */
+    top: 0;
+    left: 0;
+    background-color: #000;
+    padding-top: 80px; /* espaço para o título ficar abaixo do botão */
+    color: #fff;
+    z-index: 10;
+    transition: width 0.3s;
+    
+}
+
+.sidebar.active {
+    width: 0;
+    overflow-x: hidden;
+}
+
+.sidebar h2{
+    text-align: left    ;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding: 10px 15px
+    
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sidebar a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 15px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 1.125rem;
+    transition: background-color 0.3s;
+}
+
+/* botão para abrir/fechar a barra lateral */
+.toggle-btn {
+    display: block; /* exibe o botão em todas as telas */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+/* conteúdo principal */
+.content {
+    margin-left: 250px; /* espaço para a barra lateral */
+    padding: 20px;
+}
+
+/* CSS para o conteúdo da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Moderustic', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh; /* ocupa a metade superior da tela */
+    background-image: url(https://www.sistemapoliedro.com.br/app/uploads/2024/03/solidariedade-na-escola-dicas-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+}
+
+/* container do texto principal */
+
+#container {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    #container {
+        right: 100px; /* Aplica apenas em telas maiores */
+    }
+}
+
+.title, .conteudo {
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 10px 0; /* Espaço entre as frases */
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.conteudo {
+    font-size: 1.25rem;
+    margin: 5px;
+}   
+
+
+#principal_content {
+    padding: 50px 20px;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+
+.help {
+    display: flex;
+    justify-content: center; /* centraliza as imagens horizontalmente */
+    gap: 30px;
+    margin-bottom: 20px; /* espaço abaixo das imagens */
+}
+
+.help img {
+    max-width: 45vw;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.help p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Rodape conteudo da caixa + copyright */
+#rodape {
+    padding: 30px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 1; /* rodapé abaixo da barra lateral */
+}
+
+#rodape h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#rodape img {
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+#rodape ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 1.125rem;
+}
+
+#rodape li {
+    margin-bottom: 10px;
+}
+
+#copy {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow-x: hidden;
+        transition: width 0.3s;
+        height: 100vh;
+        position: fixed; /* Fixa a barra lateral na tela */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Coloca a barra lateral acima do conteúdo */
+        background-color: #000;
+    }
+
+    .toggle-btn {
+        display: block;
+        position: fixed; /* Mantém o botão fixo no topo */
+        top: 15px;
+        left: 15px;
+        z-index: 1100; /* Coloca o botão acima da sidebar */
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        transition: margin-left 0.3s; /* Suaviza a transição */
+    }
+
+    .sidebar.active {
+        width: 230px; /*largura da sidebar*/
+    }
+
+    .content.active {
+        /* Removido margin-left para que o conteúdo não seja empurrado pela sidebar */
+    }
+
+    /* estilo específico para imagens no celular */
+    .help {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .help img {
+        max-width: 100%;
+    }
+}
+
