@@ -16,8 +16,8 @@
         <ul>
             <li><a href="https://www.clubedemaesnovorecreio.org.br/p%C3%A1gina-inicial">Página inicial</a></li>
             <li><a href="https://www.clubedemaesnovorecreio.org.br/documentos-institucionais">Documentos Institucionais</a></li>
-            <li><a href="https://www.clubedemaesnovorecrecio.org.br/demonstra%C3%A7%C3%B5es-cont%C3%A1beis">Demonstrações Contábeis</a></li>
-            <li><a href="https://www.clubedemaesnovorecrecio.org.br/projetos">Projetos</a></li>
+            <li><a href="https://www.clubedemaesnovorecreio.org.br/demonstra%C3%A7%C3%B5es-cont%C3%A1beis">Demonstrações Contábeis</a></li>
+            <li><a href="https://www.clubedemaesnovorecreio.org.br/projetos">Projetos</a></li>
             <li class="has-submenu">
                 <a href="#">Transparência <span class="arrow">&#9662;</span></a>
                 <ul class="submenu">
@@ -74,38 +74,5 @@
             © Clube de Mães Novo Recreio - Todos os direitos reservados
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Manipulação dos links do menu
-            const menuItems = document.querySelectorAll('.sidebar ul li a');
-
-            menuItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    console.log(`Link clicado: ${item.textContent}`);
-                });
-            });
-
-            // Manipulação da barra lateral
-            const toggleBtn = document.getElementById('toggleSidebar');
-            const sidebar = document.querySelector('.sidebar');
-            const content = document.querySelector('.content');
-
-            toggleBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-                content.classList.toggle('active');
-            });
-
-            // Manipulação do submenu
-            const submenuItems = document.querySelectorAll('.has-submenu > a');
-
-            submenuItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const parentLi = item.parentElement;
-                    parentLi.classList.toggle('active');
-                });
-            });
-        });
-
-    </script>
+    <script src="javascript/script.js"></script>
 </body>
