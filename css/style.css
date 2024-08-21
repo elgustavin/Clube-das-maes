@@ -69,6 +69,43 @@
     cursor: pointer;
 }
 
+/* CSS PARA O SUBMENU */
+.has-submenu {
+    position: relative;
+}
+
+.has-submenu .arrow {
+    margin-left: 10px;
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+}
+
+.submenu {
+    display: none; /* Esconde o submenu por padrão */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu li {
+    padding: 10px 15px;
+}
+
+.submenu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* estilo do submenu quando ativo */
+.has-submenu.active .submenu {
+    display: block;
+}
+
+.has-submenu.active .arrow {
+    transform: rotate(180deg);
+}
+
+
 /* conteúdo principal */
 .content {
     margin-left: 250px; /* espaço para a barra lateral */
@@ -208,13 +245,13 @@ body::before {
     color: #666;
 }
 
-/* Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-    
-    body::before {
-        height: 58vh; /* Ajusta a altura da imagem no celular */
 
+/* codigo para a sidebar e submenu em dispositivos móveis */
+@media (max-width: 768px) {
+    body::before {
+        height: 55vh; /* Ajusta a altura da imagem no celular */
     }
+    
     .sidebar {
         width: 0;
         overflow-x: hidden;
@@ -242,7 +279,7 @@ body::before {
     }
 
     .sidebar.active {
-        width: 230px; /*largura da sidebar*/
+        width: 230px; /* largura da sidebar */
     }
 
     .content.active {
@@ -257,5 +294,36 @@ body::before {
 
     .help img {
         max-width: 100%;
+    }
+
+    /* CSS para o submenu em dispositivos móveis */
+    .has-submenu {
+        position: relative;
+    }
+
+    .submenu {
+        display: none; /* Esconde o submenu por padrão */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .submenu li {
+        padding: 10px 15px;
+    }
+
+    .submenu li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* estilo do submenu quando ativo */
+    .has-submenu.active .submenu {
+        display: block;
+    }
+
+    /* rotaciona a seta quando o submenu está visível */
+    .has-submenu.active .arrow {
+        transform: rotate(180deg);
     }
 }
