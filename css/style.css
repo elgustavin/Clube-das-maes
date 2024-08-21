@@ -126,7 +126,7 @@ body::before {
     color: #ffffff;
     font-size: 1.25rem;
     line-height: 1.6;
-    margin: 10px 0; /* Espaço entre as frases */
+    margin: 0px 0; /* Espaço entre as frases */
 }
 
 .title {
@@ -136,7 +136,7 @@ body::before {
 
 .conteudo {
     font-size: 1.25rem;
-}
+}   
 
 
 #principal_content {
@@ -158,6 +158,7 @@ body::before {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
 }
 
 .help p {
@@ -209,6 +210,11 @@ body::before {
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
+    
+    body::before {
+        height: 58vh; /* Ajusta a altura da imagem no celular */
+
+    }
     .sidebar {
         width: 0;
         overflow-x: hidden;
@@ -240,7 +246,7 @@ body::before {
     }
 
     .content.active {
-        /* Removido margin-left para que o conteúdo não seja empurrado pela sidebar */
+        /* off margin-left para que o conteúdo não seja empurrado pela sidebar */
     }
 
     /* estilo específico para imagens no celular */
@@ -253,4 +259,3 @@ body::before {
         max-width: 100%;
     }
 }
-
