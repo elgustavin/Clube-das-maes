@@ -155,7 +155,7 @@ body::before {
 
 @media (min-width: 1024px) {
     #container {
-        right: 100px; /* Aplica apenas em telas maiores */
+        right: 150px; /* Aplica apenas em telas maiores */
     }
 }
 
@@ -177,10 +177,10 @@ body::before {
 
 
 #principal_content {
-    padding: 50px 20px;
     text-align: center;
     width: 100%;
     background-color: white;
+    padding-right: 100px;
 }
 
 .help {
@@ -250,6 +250,13 @@ body::before {
 @media (max-width: 768px) {
     body::before {
         height: 55vh; /* Ajusta a altura da imagem no celular */
+    }
+
+    #principal_content {
+        padding: 50px 20px;
+        text-align: center;
+        width: 100%;
+        background-color: white;
     }
     
     .sidebar {
