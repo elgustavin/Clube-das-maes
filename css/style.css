@@ -2,14 +2,15 @@
 .sidebar {
     height: 100vh; 
     width: 250px; /* largura da barra lateral */
-    position: fixed; /*fixa na tela */
+    position: fixed; /* fixa na tela */
     top: 0;
     left: 0;
     background-color: #000;
-    padding-top: 20px;
+    padding-top: 80px; /* espaço para o título ficar abaixo do botão */
     color: #fff;
     z-index: 10;
     transition: width 0.3s;
+    
 }
 
 .sidebar.active {
@@ -17,10 +18,12 @@
     overflow-x: hidden;
 }
 
-.sidebar h2 {
-    text-align: center;
+.sidebar h2{
+    text-align: left    ;
     font-size: 1.5rem;
     margin-bottom: 20px;
+    padding: 10px 15px
+    
 }
 
 .sidebar a {
@@ -101,6 +104,7 @@ body::before {
 }
 
 /* container do texto principal */
+
 #container {
     width: 100%;
     height: 50vh;
@@ -110,7 +114,12 @@ body::before {
     align-items: center; 
     position: relative;
     text-align: center;
-    padding: 0 20px; /* adiciona algum padding lateral */
+}
+
+@media (min-width: 1024px) {
+    #container {
+        right: 100px; /* Aplica apenas em telas maiores */
+    }
 }
 
 .title, .conteudo {
@@ -203,34 +212,45 @@ body::before {
     .sidebar {
         width: 0;
         overflow-x: hidden;
-        transition: 0.3s;
-        height: 100vh; /* garante que a barra lateral ocupe toda a altura da tela */
+        transition: width 0.3s;
+        height: 100vh;
+        position: fixed; /* Fixa a barra lateral na tela */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Coloca a barra lateral acima do conteúdo */
+        background-color: #000;
+    }
+
+    .toggle-btn {
+        display: block;
+        position: fixed; /* Mantém o botão fixo no topo */
+        top: 15px;
+        left: 15px;
+        z-index: 1100; /* Coloca o botão acima da sidebar */
     }
 
     .content {
         margin-left: 0;
         padding: 20px;
-    }
-
-    .toggle-btn {
-        display: block;
+        transition: margin-left 0.3s; /* Suaviza a transição */
     }
 
     .sidebar.active {
-        width: 250px;
+        width: 230px; /*largura da sidebar*/
     }
 
     .content.active {
-        margin-left: 250px;
+        /* Removido margin-left para que o conteúdo não seja empurrado pela sidebar */
     }
 
-    /* Estilo específico para imagens no celular */
+    /* estilo específico para imagens no celular */
     .help {
-        flex-direction: column; /* imagens uma abaixo da outra no celular */
+        flex-direction: column;
         align-items: center;
     }
 
     .help img {
-        max-width: 100%; /* ajuste para que as imagens não ultrapassem a largura do container */
+        max-width: 100%;
     }
 }
+
